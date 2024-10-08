@@ -1,0 +1,9 @@
+Tag Counts:
+Tag,Count
+max_port_case,1
+boundary_case,1
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+65535,tcp,1
+0,tcp,1

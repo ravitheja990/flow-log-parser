@@ -59,6 +59,15 @@ javac FlowLogTagger.java
 Running
 To run the program, you need to pass three command-line arguments: the path to the lookup table (lookup.csv), the flow log file (flowlog.txt), and the output file (output.txt).
 
+Command to run:
+(run inside flow-log-parser repo/dir after compiling the code)
+structure --
+java -classpath <path-to-compiled-class-in-out-folder> FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/output.txt
+
+My Example:
+java -classpath /Users/ravitheja/Documents/Projects/flow-log-parser/out/production/flow-log-parser FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/output.txt
+
+
 Running in IntelliJ
 Open the Run/Debug Configurations in IntelliJ.
 Set the Program Arguments as follows:

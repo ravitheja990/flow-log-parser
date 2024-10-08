@@ -1,0 +1,9 @@
+Tag Counts:
+Tag,Count
+web_service,1
+sv_P5,1
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+80,udp,1
+0,icmp,1
