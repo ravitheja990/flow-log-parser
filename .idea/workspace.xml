@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c4fc139-26de-453b-980e-78d51fd7dcbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FlowLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlowLogParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     <configuration name="FlowLogParser" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="FlowLogParser" />
       <module name="flow-log-parser" />
-      <option name="PROGRAM_PARAMETERS" value="tests/test2/lookup.csv tests/test2/flowlog.txt tests/test2/output.txt" />
+      <option name="PROGRAM_PARAMETERS" value="tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
