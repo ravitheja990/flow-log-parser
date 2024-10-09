@@ -1,4 +1,4 @@
-                                                                    Flow Log Parser
+                            Flow Log Parser
 
 This project is a flow log parser that maps each row from a flow log file to a corresponding tag based on a lookup table. 
 The lookup table contains destination port and protocol combinations, which are used to assign tags to each flow log entry. 
