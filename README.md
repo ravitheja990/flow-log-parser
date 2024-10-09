@@ -4,13 +4,13 @@ This project is a flow log parser that maps each row from a flow log file to a c
 The lookup table contains destination port and protocol combinations, which are used to assign tags to each flow log entry. 
 The output includes counts of matches for each tag and port/protocol combination.
 
-Assumptions
+Assumptions:
 
-   1. The program only supports the default log format (as shown in the sample flow logs provided in the prompt).
+   1. The program only supports the default log format (as shown in the sample flow logs provided in the problem statement in the email).
    2. Version 2 of the flow log is the only version supported.
    3. The log parsing is case-insensitive when matching protocol types (tcp, udp, etc.).
    4. The lookup table can map multiple tags to different port/protocol combinations.
-   5. Non-matching log entries are categorized as "Untagged."
+   5. Non-matching log entries are categorized as "Untagged"
 
 
     Directory Structure
@@ -89,13 +89,13 @@ Run the program with below command from command line:
 
     java FlowLogTagger tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt
 
-   5. Output
+   5. Output:
+
       The program generates an output.txt file present in tests/test1 containing the following sections:
 
-Tag Counts: Count of occurrences for each tag found.
-Port/Protocol Combination Counts: Count of occurrences for each unique port/protocol combination.
+      Tag Counts: Count of occurrences for each tag found.
+      Port/Protocol Combination Counts: Count of occurrences for each unique port/protocol combination.
 
-    Example
     Tag Counts:
     Tag,Count
     sv_P2,1
@@ -125,13 +125,13 @@ Tests Performed
     Basic Functionality Test:
     
         a. Tested with the provided flow log and lookup table to ensure correct tag mapping 
-        and counting.
+           and counting.
         b. Verified output for tag counts and port/protocol combination counts.
 
     Untagged Entries:
     
-        a. Tested logs that do not have corresponding entries in the lookup table to ensure they
-        are counted as "Untagged"
+        a. Tested logs that do not have corresponding entries in the lookup table to ensure 
+           they are counted as "Untagged"
 
     Edge Case Handling:
     
