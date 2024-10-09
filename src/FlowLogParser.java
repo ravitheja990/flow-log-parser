@@ -152,8 +152,8 @@ public class FlowLogParser {
         protocolMap.put("143", "ethernet");
         protocolMap.put("144", "aggfrag");
         protocolMap.put("145", "nsh");
-        protocolMap.put("253", "use for experimentation and testing");
-        protocolMap.put("254", "use for experimentation and testing");
+//        protocolMap.put("253", "use for experimentation and testing");
+//        protocolMap.put("254", "use for experimentation and testing");
         protocolMap.put("255", "reserved");
     }
 
@@ -213,23 +213,31 @@ public class FlowLogParser {
                 lookupEntries.add(new LookupEntry(tokens[0], tokens[1].toLowerCase(), tokens[2]));
             }
         }
+
+        System.out.println("lookupEntries is :: " + lookupEntries);
+
         return lookupEntries;
     }
 
-    private static String findTagForFlow(FlowLog log, List<LookupEntry> lookupEntries) {
+    private static List<String> findTagsForFlow(FlowLog log, List<LookupEntry> lookupEntries) {
+        List<String> matchedTags = new ArrayList<>();
         for (LookupEntry entry : lookupEntries) {
-            if (entry.destinationPort.equals(log.destinationPort) && entry.protocol.equals(log.protocol)) {
-                return entry.tag;
+            if (entry.destinationPort.equalsIgnoreCase(log.destinationPort) && entry.protocol.equalsIgnoreCase(log.protocol)) {
+                matchedTags.add(entry.tag);
             }
         }
-        return "Untagged"; // If no match is found
+        if (matchedTags.isEmpty()) {
+            matchedTags.add("Untagged");
+        }
+        System.out.println("matchedTags is :: " + matchedTags);
+        return matchedTags;
     }
 
     private static void processFlowLogs(String flowLogFilePath, List<LookupEntry> lookupEntries, String outputFilePath) throws IOException {
         Map<String, Integer> tagCounts = new HashMap<>();
         Map<String, Integer> portProtocolCounts = new HashMap<>();
 
-        // Read through the flow log file line by line
+        // Read the flow log file line by line
         try (BufferedReader reader = new BufferedReader(new FileReader(flowLogFilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -239,14 +247,20 @@ public class FlowLogParser {
                     continue;
                 }
 
+                // tokens array would look like this
+                // [2, 123456789012, eni-4h5i6j7k, 172.16.0.2, 192.0.2.146, 49154, 143, 6, 9, 4500, 1620140661, 1620140721, ACCEPT, OK]
+
                 String destinationPort = tokens[5];
                 String protocol = getProtocolFromCode(tokens[7]);
 
                 FlowLog log = new FlowLog(destinationPort, protocol);
-                String tag = findTagForFlow(log, lookupEntries);
+                System.out.println(":: processing for this log :: " + log.toString());
+                List<String> tags = findTagsForFlow(log, lookupEntries);
 
                 // Update tag counts
-                tagCounts.put(tag, tagCounts.getOrDefault(tag, 0) + 1);
+                for (String tag : tags) {
+                    tagCounts.put(tag, tagCounts.getOrDefault(tag, 0) + 1);
+                }
 
                 // Update port/protocol combination counts
                 String portProtocolKey = destinationPort + "," + protocol;
@@ -257,17 +271,6 @@ public class FlowLogParser {
         // Write the results to the output file
         writeResultsToFile(tagCounts, portProtocolCounts, outputFilePath);
     }
-
-//    private static String getProtocolFromCode(String protocolCode) {
-//        switch (protocolCode) {
-//            case "6":
-//                return "tcp";
-//            case "17":
-//                return "udp";
-//            default:
-//                return "icmp";
-//        }
-//    }
 
     private static String getProtocolFromCode(String protocolCodeStr) {
         return protocolMap.getOrDefault(protocolCodeStr, "unknown protocol");
@@ -311,5 +314,4 @@ public class FlowLogParser {
             System.err.println("Error: Could not process files. " + e.getMessage());
         }
     }
-
 }
