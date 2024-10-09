@@ -202,14 +202,14 @@ public class FlowLogParser {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("dstport")) {
-                    continue; // skip the header
+                    continue; // skipping the header
                 }
                 String[] tokens = line.split(",");
                 if (tokens.length != 3) {
                     // If we don't have exactly 3 columns, something is wrong—skip it
                     continue;
                 }
-                // Add a new LookupEntry with port, protocol (converted to lowercase), and tag
+                // Adding a new LookupEntry with port, protocol (converted to lowercase), and tag
                 lookupEntries.add(new LookupEntry(tokens[0], tokens[1].toLowerCase(), tokens[2]));
             }
         }
