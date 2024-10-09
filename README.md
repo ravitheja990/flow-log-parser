@@ -41,10 +41,16 @@ How to Compile and Run
 Java 8 or later should be installed on your system.
 The project is intended to be run using IntelliJ IDEA or the command line.
 
+If using command line, first enter into project directory using:
+
+cd flow-log-parser
+
+and if using IntelliJ or any other IDE or code editor just open the project directory in it.
+
 2. Compiling
 To compile the program, follow these steps:
 
-Open the project in IntelliJ IDEA, or navigate to the src/ directory from the command line.
+Open the project in IntelliJ IDEA, or navigate to the src/ directory (using cd src/) from the command line.
 Compile the FlowLogTagger.java file either through IntelliJ or using the command line:
 
 javac FlowLogTagger.java
@@ -53,10 +59,15 @@ javac FlowLogTagger.java
 To run the program, you need to pass three command-line arguments: the path to the lookup table (lookup.csv), the flow log file (flowlog.txt), and the output file (output.txt).
 
 Command to run:
-(run inside flow-log-parser repo/dir after compiling the code)
-structure -->
-java FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/output.txt
+(run inside flow-log-parser repository or directory after compiling the code)
 
+structure -->
+
+java FlowLogParser <lookup-file-path> <flow-log-file-path> <output-file-path>
+
+eg:
+
+java FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/output.txt
 
 -->Running in IntelliJ:
 
@@ -74,7 +85,7 @@ java FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/ou
     java FlowLogTagger tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
 
     5. Output
-    The program generates an output.txt file containing the following sections:
+    The program generates an output.txt file present in tests/test5 containing the following sections:
 
 Tag Counts: Count of occurrences for each tag found.
 Port/Protocol Combination Counts: Count of occurrences for each unique port/protocol combination.
