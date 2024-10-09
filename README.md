@@ -87,7 +87,7 @@ eg:
 
 Run the program with below command from command line:
 
-        java FlowLogTagger tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt
+    java FlowLogTagger tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt
 
    5. Output
       The program generates an output.txt file present in tests/test1 containing the following sections:
@@ -124,33 +124,35 @@ Tests Performed
 
     Basic Functionality Test:
     
-        Tested with the provided flow log and lookup table to ensure correct tag mapping and counting.
-        Verified output for tag counts and port/protocol combination counts.
+        a. Tested with the provided flow log and lookup table to ensure correct tag mapping 
+        and counting.
+        b. Verified output for tag counts and port/protocol combination counts.
 
     Untagged Entries:
     
-        Tested logs that do not have corresponding entries in the lookup table to ensure they are counted as "Untagged"
+        a. Tested logs that do not have corresponding entries in the lookup table to ensure they
+        are counted as "Untagged"
 
     Edge Case Handling:
     
-        Logs with unsupported protocols.
-        Logs where the lookup table does not include specific ports.
+        a. Logs with unsupported protocols.
+        b. Logs where the lookup table does not include specific ports.
 
 Code Explanation:
 
-    The program reads the lookup table and flow log in a line-by-line manner, ensuring memory efficiency for large files (up to 10MB as specified).
-    The logic is simple and modular, with clear separation between file reading, log parsing, and output generation.
-    Case insensitivity is maintained for ease of protocol matching (tcp, udp).
-    Untagged entries are handled separately, ensuring comprehensive coverage of all log entries.
-    No external libraries are used, adhering to the requirement of using only Java standard libraries.
+1. The program reads the lookup table and flow log in a line-by-line manner, ensuring memory efficiency for large files (up to 10MB as specified).
+2. The logic is simple and modular, with clear separation between file reading, log parsing, and output generation.
+3. Case insensitivity is maintained for ease of protocol matching (tcp, udp).
+4. Untagged entries are handled separately, ensuring comprehensive coverage of all log entries.
+5. No external libraries are used, adhering to the requirement of using only Java standard libraries.
 
 Possible Future Enhancements:
 
-    Custom Log Format Support: Adding flexibility to support different log versions or custom formats.
-    Protocol Handling: Extend the program to handle more protocols beyond TCP/UDP (like ICMP, SCTP, etc.).
-    Multithreading: For larger datasets, introduce multithreading to improve performance during file parsing.
+1. Custom Log Format Support: Adding flexibility to support different log versions or custom formats.
+2. Protocol Handling: Extend the program to handle more protocols beyond TCP/UDP (like ICMP, SCTP, etc.).
+3. Multithreading: For larger datasets, introduce multithreading to improve performance during file parsing.
 
 References:
 
-    IANA Protocol Numbers: https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
-    Flow Log Records: https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html
+1. IANA Protocol Numbers: https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+2. Flow Log Records: https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html
