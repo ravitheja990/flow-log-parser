@@ -15,32 +15,25 @@ Assumptions
 
 Directory Structure
 
-flow-log-parser
-│
-├── .idea
-│
-├── out
-│   └── production
-│       └── flow-log-parser
+flow-log-parser/
+├── .idea/
+├── out/
+│   └── production/
+│       └── flow-log-parser/
 │           ├── FlowLogParser
 │           ├── FlowLog
 │           └── LookupEntry
-│
-├── src
+├── src/
 │   └── FlowLogParser
-│
-├── tests
-│   └── test1
+├── tests/
+│   └── test1/
 │       ├── flowlog.txt
 │       ├── lookup.csv
 │       └── output.txt
-│
 ├── .gitignore
 ├── flow-log-parser.iml
-│
-└── External Libraries
-    └── Scratches and Consoles
-
+└── External Libraries/
+└── Scratches and Consoles
 
 How to Compile and Run
 
