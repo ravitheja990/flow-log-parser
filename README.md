@@ -44,11 +44,11 @@ flow-log-parser
 
 How to Compile and Run
 
-Requirements
+1. Requirements
 Java 8 or later should be installed on your system.
 The project is intended to be run using IntelliJ IDEA or the command line.
 
-Compiling
+2. Compiling
 To compile the program, follow these steps:
 
 Open the project in IntelliJ IDEA, or navigate to the src/ directory from the command line.
@@ -56,7 +56,7 @@ Compile the FlowLogTagger.java file either through IntelliJ or using the command
 
 javac FlowLogTagger.java
 
-Running
+3. Running
 To run the program, you need to pass three command-line arguments: the path to the lookup table (lookup.csv), the flow log file (flowlog.txt), and the output file (output.txt).
 
 Command to run:
@@ -64,26 +64,28 @@ Command to run:
 structure -->
 java FlowLogParser tests/test3/lookup.csv tests/test3/flowlog.txt tests/test3/output.txt
 
-Running in IntelliJ:
+
+-->Running in IntelliJ:
 
 1. Open the Run/Debug Configurations in IntelliJ.
 
-2. Set the Program Arguments as follows:
-tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
+   2. Set the Program Arguments as follows:
+   tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
 
-3. Run the program from IntelliJ.
+   3. Run the program from IntelliJ.
 
-4. Running from the Command Line
-Navigate to the project directory where the compiled FlowLogTagger.class file is located.
+   4. Running from the Command Line
+   Navigate to the project directory where the compiled FlowLogTagger.class file is located.
 
-Run the program:
-java FlowLogTagger tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
+    Run the program:
+    java FlowLogTagger tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
 
-5. Output
-The program generates an output.txt file containing the following sections:
+    5. Output
+    The program generates an output.txt file containing the following sections:
 
 Tag Counts: Count of occurrences for each tag found.
 Port/Protocol Combination Counts: Count of occurrences for each unique port/protocol combination.
+
 Example
 Tag Counts:
 Tag,Count
@@ -127,17 +129,17 @@ Logs where the lookup table does not include specific ports.
 
 Code Explanation:
 
-The program reads the lookup table and flow log in a line-by-line manner, ensuring memory efficiency for large files (up to 10MB as specified).
-The logic is simple and modular, with clear separation between file reading, log parsing, and output generation.
-Case insensitivity is maintained for ease of protocol matching (tcp, udp).
-Untagged entries are handled separately, ensuring comprehensive coverage of all log entries.
-No external libraries are used, adhering to the requirement of using only Java standard libraries.
+   1. The program reads the lookup table and flow log in a line-by-line manner, ensuring memory efficiency for large files (up to 10MB as specified).
+   2. The logic is simple and modular, with clear separation between file reading, log parsing, and output generation.
+   3. Case insensitivity is maintained for ease of protocol matching (tcp, udp).
+   4. Untagged entries are handled separately, ensuring comprehensive coverage of all log entries.
+   5. No external libraries are used, adhering to the requirement of using only Java standard libraries.
 
 Possible Future Enhancements:
 
-Custom Log Format Support: Adding flexibility to support different log versions or custom formats.
-Protocol Handling: Extend the program to handle more protocols beyond TCP/UDP (like ICMP, SCTP, etc.).
-Multithreading: For larger datasets, introduce multithreading to improve performance during file parsing.
+   1. Custom Log Format Support: Adding flexibility to support different log versions or custom formats.
+   2. Protocol Handling: Extend the program to handle more protocols beyond TCP/UDP (like ICMP, SCTP, etc.).
+   3. Multithreading: For larger datasets, introduce multithreading to improve performance during file parsing.
 
 References:
 
