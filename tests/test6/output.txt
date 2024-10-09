@@ -1,0 +1,7 @@
+Tag Counts:
+Tag,Count
+Untagged,1
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+443,unknown protocol,1

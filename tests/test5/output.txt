@@ -1,0 +1,7 @@
+Tag Counts:
+Tag,Count
+ssh_service,1
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+22,tcp,1
