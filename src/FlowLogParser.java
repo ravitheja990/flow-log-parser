@@ -202,7 +202,7 @@ public class FlowLogParser {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("dstport")) {
-                    continue; // skipping the header
+                    continue; // skipping the header line
                 }
                 String[] tokens = line.split(",");
                 if (tokens.length != 3) {
@@ -311,4 +311,5 @@ public class FlowLogParser {
             System.err.println("Error: Could not process files. " + e.getMessage());
         }
     }
+
 }
