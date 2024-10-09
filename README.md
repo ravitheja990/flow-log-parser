@@ -43,17 +43,20 @@ The project is intended to be run using IntelliJ IDEA or the command line.
 
 If using command line, first enter into project directory using:
 
-cd flow-log-parser
+    cd flow-log-parser
 
 and if using IntelliJ or any other IDE or code editor just open the project directory in it.
 
 2. Compiling
 To compile the program, follow these steps:
 
-Open the project in IntelliJ IDEA, or navigate to the src/ directory (using cd src/) from the command line.
+Open the project in IntelliJ IDEA, or navigate to the src/ directory using below command from command line:
+
+    cd src/
+
 Compile the FlowLogTagger.java file either through IntelliJ or using the command line:
 
-javac FlowLogTagger.java
+    javac FlowLogTagger.java
 
 3. Running
 To run the program, you need to pass three command-line arguments: the path to the lookup table (lookup.csv), the flow log file (flowlog.txt), and the output file (output.txt).
@@ -74,7 +77,8 @@ eg:
    1. Open the Run/Debug Configurations in IntelliJ.
 
    2. Set the Program Arguments as follows:
-   tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
+   
+    tests/test5/lookup.csv tests/test5/flowlog.txt tests/test5/output.txt
 
    3. Run the program from IntelliJ.
 
