@@ -30,6 +30,7 @@ Assumptions:
     │       ├── flowlog.txt
     │       ├── lookup.csv
     │       └── output.txt
+    │       └── readme
     ├── .gitignore
     ├── flow-log-parser.iml
     └── External Libraries/
