@@ -85,9 +85,9 @@ eg:
    4. Running from the Command Line
       Navigate to the project directory where the compiled FlowLogTagger.class file is located.
 
-Run the program with below command from command line:
+Run the program with below command from command line (make sure you are in src folder):
 
-    java FlowLogTagger tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt
+    java FlowLogTagger ../tests/test1/lookup.csv ../tests/test1/flowlog.txt ../tests/test1/output.txt
 
    5. Output:
 
