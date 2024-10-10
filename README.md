@@ -62,7 +62,7 @@ Compile the FlowLogTagger.java file either through IntelliJ or using the command
 To run the program, you need to pass three command-line arguments: the path to the lookup table (lookup.csv), the flow log file (flowlog.txt), and the output file (output.txt).
 
 Command to run:
-(run inside flow-log-parser repository or directory after compiling the code)
+(run inside flow-log-parser repository or directory after compiling the code, make sure you are in src folder and directly run below command)
 
 structure -->
 
@@ -70,7 +70,7 @@ structure -->
 
 eg:
 
-    java FlowLogParser tests/test1/lookup.csv tests/test1/flowlog.txt tests/test1/output.txt
+    java FlowLogParser ../tests/test1/lookup.csv ../tests/test1/flowlog.txt ../tests/test1/output.txt
 
 -->Running in IntelliJ:
 
