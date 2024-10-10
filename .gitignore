@@ -1,7 +1,9 @@
 ### IntelliJ IDEA ###
+# Ignore project-specific and IDE-specific files
+*.iml
+*.iws
+.idea/
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
 ### Eclipse ###
 .apt_generated
